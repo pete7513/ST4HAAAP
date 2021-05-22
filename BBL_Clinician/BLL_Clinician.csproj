@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DLL_Clinician\DLL_Clinician.csproj" />
+    <ProjectReference Include="..\EFCoreTestConsoleApp\EFCoreTestConsoleApp.csproj" />
+    <ProjectReference Include="..\HL7-FHIR\HL7-FHIR.csproj" />
+  </ItemGroup>
+
+</Project>

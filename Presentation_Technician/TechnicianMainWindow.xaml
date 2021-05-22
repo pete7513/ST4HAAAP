@@ -1,0 +1,59 @@
+﻿<Window x:Class="Presentation_Technician.TechnicianMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa = "http://schemas.fontawesome.io/icons/"
+        xmlns:local="clr-namespace:Presentation_Technician"
+        mc:Ignorable="d"
+        Title="Tekniker" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="hidden"/>
+           
+    <Label x:Name="VelkommenL" Content="Velkommen til tekniker-hovedmenu!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"></Label>
+       
+        <StackPanel Orientation="Horizontal" Height ="35" VerticalAlignment="Top">
+            <Button x:Name="HovedmenuB" Content="Hovedmenu" MinWidth="75" Margin="10,0,0,0" Click="HovedmenuB_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="ManageHAB" Content="Manage HA" MinWidth="75" Margin="10,0,0,0" Click="ManageHAB_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="ScanB" Content="Scan" MinWidth="50" Margin="10,0,0,0" Click="ScanB_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="PrintB" Content="Print" MinWidth="50" Margin="10,0,0,0" Click="PrintB_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="ProcesB" Content="Vis proces" MinWidth="75" Margin="10,0,0,0" Click="ProcesB_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+        </StackPanel>
+    </Grid>
+
+</Window>

@@ -1,0 +1,52 @@
+﻿<Window x:Class="Presentation_Clinician.ClinicianMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation_Clinician"
+        mc:Ignorable="d"
+        Title="Kliniker Portalen" Height="450" Width="800" Loaded="Window_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="799*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Height ="45" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <Button x:Name="BtnStart" Content="Startside" Width="90" Margin="10,5,0,0" Click="BtnStart_Click" FontWeight="Bold" FontSize="14">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="BtnPatient" Content="Patient" Width="90" Margin="10,5,0,0" Click="BtnPatient_Click" FontWeight="Bold" FontSize="14">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="BtnHearingAid" Content="Høreapparat" Width="90" Margin="10,5,0,0" Click="BtnHearingAid_Click" FontWeight="Bold" FontSize="14">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="BtnProces" Content="Vis Proces" Width="90" Margin="10,5,0,0" Click="BtnProces_Click" FontWeight="Bold" FontSize="14">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+        <Frame x:Name="Main" Margin="0,50,0,-1" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2"/>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,49 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation_Login"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Name="LoginWindow" x:Class="Presentation_Login.MainWindow"
+        mc:Ignorable="d"
+        Title="ClinicianMainWindow" Height="290" Width="800" Closing="LoginWindow_Closing">
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+
+
+        <TextBox x:Name="MedarbejderIDTB" Text="" TextWrapping="Wrap" BorderBrush="Black" VerticalContentAlignment="Center" Margin="359,98,273,0" Height="26" VerticalAlignment="Top"/>
+        <Label Content="Staff Id: " Margin="273,95,462,100"/>
+
+        <PasswordBox x:Name="PasswordTB" VerticalContentAlignment="Center"
+                 BorderBrush="Black" KeyUp="PasswordTB_KeyUp" Margin="359,129,0,0" HorizontalAlignment="Left" Width="168" Height="26" VerticalAlignment="Top">
+            <PasswordBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5 8 8 5"/>
+                </Style>
+            </PasswordBox.Resources>
+        </PasswordBox>
+        <Label Content="Password: " Margin="273,132,461,63"/>
+
+        <Button Margin="359,160,273,0" x:Name="logInB" Content="Log in" Click="LoginDB_Click" BorderBrush="Black" FontWeight="Bold" Foreground="White" Height="38" VerticalAlignment="Top">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="0.1,9">
+                    <GradientStop Color="#FF5A6699" Offset="1"/>
+                    <GradientStop Color="#FF589CF1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <syncfusion:Clock HorizontalAlignment="Left" Margin="16,18,0,0" VerticalAlignment="Top" Height="190" Width="178"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="62" Width="254" FontSize="40" FontWeight="Bold" TextAlignment="Center"><Run Language="da-dk" Text="S"/><Run Text="taff login"/></TextBlock>
+    </Grid>
+</Window>

@@ -1,0 +1,23 @@
+Update: UC gennerelt 
+
+Create: Oprettelse af nye metoder og klasser
+Modify: Ændring funktionalitet eller kode i metoder og klasser
+Delete: Slet af metoder og klasser
+
+Git update sekvens fx. 
+
+
+Update: 
+Create:
+Modify:
+Delete:
+
+Oversigt over Use Cases
+UC1 Staff Login
+UC2 CRUD Patient
+UC3 CRUD HA
+UC4 Scan 3D-Model
+UC5 Print 3D-Model
+UC6 Show Process
+
+Hvis Migrations ikke virker skift alle Cascade til Restrict!!!

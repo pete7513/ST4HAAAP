@@ -1,0 +1,215 @@
+﻿<Page x:Class="Presentation_Technician.HAInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Presentation_Technician"
+      xmlns:fa = "http://schemas.fontawesome.io/icons/"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HAInfoPage">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="0"  Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="CPRnummerTB" Grid.Column="1" Text="" TextWrapping="Wrap" Margin="0,0,300,0" VerticalContentAlignment="Center">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                        </Style>
+                    </TextBox.Resources>
+
+                </TextBox>
+                <Label Content="PCPR-Nummer: "/>
+            </Grid>
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name ="OKB" Content="OK" Grid.Column="1"  HorizontalAlignment="Left" MinWidth="100"  Margin="0,8,0,0" Click="OKB_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+            <fa:ImageAwesome  Grid.Row="0" Margin="375,-15,358,102" Name="Loading" Visibility="Collapsed" Icon="CircleOutlineNotch" Spin="false" SpinDuration="3" Height="40" Width="40" />
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.7*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Grid.Row="1">
+                    <Label Content =" Patientinformation" FontWeight="Bold" Margin="5,0,50,0 " ></Label>
+                    <TextBox x:Name="patientInfoTB"   Margin="5,0,50,0" Height="200">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="1">
+                    <Label Grid.Column="1" Content ="Vælg høreapparat" HorizontalAlignment="Left" FontWeight="Bold" ></Label>
+                    <ListBox Grid.Column="1" Name="HAList"  Height ="100" Width="150" HorizontalAlignment="Left" SelectionChanged="HAList_SelectionChanged">
+                        <ListBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                            </Style>
+                        </ListBox.Resources>
+                       
+                    </ListBox>
+                    <Button x:Name="ShowHAInfoB" Content="Vis informationer" Width="150" HorizontalAlignment="Left" Margin="0,5,0,0" Click="ShowHAInfoB_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="2">
+                    <Label Grid.Column="2" Content ="Generelle informationer" FontWeight="Bold" HorizontalAlignment="Left"></Label>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Type: " Grid.Column="1"></Label>
+                        <TextBox x:Name="TypeTB" Grid.Column="2" Margin="0,5,5,0" IsEnabled="False">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        
+                        <ComboBox x:Name="TypeCB" Grid.Column="2" Margin="0,5,5,0" Background="White" Visibility="Collapsed">
+                            <ComboBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                                </Style>
+                            </ComboBox.Resources>
+                        </ComboBox>
+
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Farve: " Grid.Column="1"></Label>
+                        <TextBox x:Name="ColorTB" Grid.Column="2" Margin="0,5,5,0" Background="White" Visibility="Visible" IsEnabled="False">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <ComboBox x:Name="ColorCB" Grid.Column="2" Margin="0,5,5,0" Background="White" Visibility="Collapsed">
+                            <ComboBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                                </Style>
+                            </ComboBox.Resources>
+                        </ComboBox>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="21*"/>
+                            <ColumnDefinition Width="106*"/>
+                            <ColumnDefinition Width="32*"/>
+                            <ColumnDefinition Width="137*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Dato for aftryk: " Grid.ColumnSpan="3" Margin="21,0,32,0"/>
+                        <TextBox x:Name="GenDateTB" Grid.Column="2" Margin="0,5,5,0" Grid.ColumnSpan="2" IsEnabled="False">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Grid>
+
+                    <Label Grid.Column="2" Content ="Tekniske informationer" FontWeight="Bold" HorizontalAlignment="Left"></Label>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" Content="Dato:"></Label>
+                        <TextBox x:Name="TechDateTB" Grid.Column="2"  Margin="0,5,5,0" IsEnabled="False">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" Content="Printstatus:"></Label>
+                        <TextBox x:Name="PrintStatusTB" Grid.Column="2"  Margin="0,5,5,0" IsEnabled="False">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Grid>
+                    <Button x:Name="RedigerB" Content="Rediger" Margin="5" Click="RedigerB_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button x:Name="GemB" Content="Gem ændringer" Margin="5" Click="GemB_Click" Visibility="Collapsed">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+            
+        </StackPanel>
+
+    </Grid>
+</Page>

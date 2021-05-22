@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NSubstitute" Version="4.2.2" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="NunitXml.TestLogger" Version="3.0.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BBL_Technician\BLL_Technician.csproj" />
+    <ProjectReference Include="..\DLL_Technician\DLL_Technician.csproj" />
+    <ProjectReference Include="..\Presentation_Technician\Presentation_Technician.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DLL_Tech\" />
+    <Folder Include="Presentation_Tech\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,117 @@
+﻿<Page x:Class="Presentation_Technician.PrintPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Presentation_Technician"
+      xmlns:fa = "http://schemas.fontawesome.io/icons/"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PrintPage">
+
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="CPR-Nummer:" HorizontalAlignment="Right" FontSize="20"/>
+
+                <TextBox Grid.Column="1" x:Name="CPRnummerTB" FontSize="20" TextWrapping="Wrap" BorderBrush="Black" Width="190" Height="30">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+
+            </Grid>
+
+            <Button  x:Name="FindScanB" Content="Find scanninger for patient" FontSize="16" Width="350" Height ="30"  Click="FindScanB_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Grid>
+                <Button x:Name ="FindAllPatientsB" Content="Find alle patienter" FontSize="20"  Height="60" Width="190" HorizontalAlignment="Center" Click="FindAllPatientsB_Click" Grid.RowSpan="2">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid>
+                <fa:ImageAwesome HorizontalAlignment="Center" VerticalAlignment="Center" Name="Loading" Visibility="Collapsed" Icon="CircleOutlineNotch" Spin="false" SpinDuration="3" Height="40" Width="40" RenderTransformOrigin="0.55,0.517"/>
+            </Grid>
+        </StackPanel>
+
+
+        <StackPanel  Grid.Row="1" Grid.Column="1">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="201*"/>
+                    <ColumnDefinition Width="199*"/>
+                </Grid.ColumnDefinitions>
+
+                <ListBox  x:Name="PatientInformationLB" Height ="120" Width="190" HorizontalAlignment="center" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                    <ListBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                        </Style>
+                    </ListBox.Resources>
+                </ListBox>
+            </Grid>
+
+        </StackPanel>
+
+        <StackPanel  Grid.Row="1" Grid.Column="0">
+            <Grid>
+                <TextBox x:Name="PatientInformationTB" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="190" Height="120" Margin="107,0,0,0">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <Button x:Name="PrintB" Content ="Print" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="150" Click="PrintB_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5 5 5 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Page>
