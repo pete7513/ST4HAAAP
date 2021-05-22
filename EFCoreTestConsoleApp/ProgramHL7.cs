@@ -20,7 +20,7 @@ namespace EFCoreTestConsoleApp
          //name.Prefix = new string[] { "Mr" };
          //name.Given = new string[] { "Test" };
          name.Text = "Perfekt";
-         name.Family = "Testensen";
+         name.Family = "Lets'go";
 
          newHL7Patient.Name.Add(name);
 
